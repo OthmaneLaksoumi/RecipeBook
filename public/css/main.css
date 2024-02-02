@@ -1,0 +1,609 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+:root {
+    --main-color: #EB4938;
+}
+
+/* Start Container */
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Container */
+
+/* Start Components */
+.success {
+    background-color: rgb(208, 246, 208);
+    color: black;
+    padding: 20px 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* End Components */
+
+
+/* Start Header */
+
+header {
+    border-bottom: #eee solid 2px;
+    padding: 5px 0px;
+}
+
+header span {
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+header .menu {
+    display: none;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container nav ul {
+    list-style: none;
+    display: flex;
+}
+
+@media (max-width: 993px) {
+    header .container a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .landig {
+        margin-top: 250px !important;
+    }
+
+    header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    header .container nav,
+    header .container .buttons {
+        display: none;
+    }
+
+    header .menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    header .menu i {
+        font-size: 25px;
+    }
+
+    header .menu ul {
+        position: absolute;
+        left: 0;
+        list-style: none;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header .menu ul li {
+        margin: 10px;
+        border-bottom: 1px solid var(--main-color);
+        transition: 0.2s;
+    }
+
+    header .menu ul li:hover {
+        padding-left: 10px;
+    }
+
+
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+header ul li {
+    margin-right: 30px;
+}
+
+header li a:hover {
+    color: var(--main-color);
+}
+
+a.active {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+header .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .buttons a {
+    padding: 10px 15px;
+    background-color: #EB4938;
+    color: white;
+    text-decoration: none;
+    border: var(--main-color) solid 1px;
+    border-radius: 25px;
+    transition: 0.2s;
+}
+
+header .buttons a:hover {
+    background-color: white;
+    color: var(--main-color);
+    border: var(--main-color) solid 1px;
+}
+
+header .buttons a:first-child {
+    margin-right: 20px;
+}
+
+/* End Header */
+
+/* Start Landing */
+
+.landig {
+    background-image: url(../storage/landing.png);
+    background-size: cover;
+    width: 95%;
+    height: 90vh;
+    border-radius: 20px;
+    margin: 40px auto;
+}
+
+/* End Landing */
+
+/* Start Form Style */
+
+form {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* border: black solid 1px; */
+}
+
+form div {
+    /* border: black solid 1px; */
+    margin: 15px auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+form input:not([type="file"]),
+form textarea,
+form select {
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+    background-color: rgb(204 204 204 / 0.1);
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+form textarea {
+    padding-top: 10px;
+}
+
+form input:focus,
+form textarea:focus {
+    border-top: 1px solid var(--main-color);
+}
+
+form input {
+    height: 40px;
+}
+
+
+.hidden-input {
+    display: none;
+}
+
+.custom-button {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(204 204 204 / 0.1);
+    color: #000;
+    cursor: pointer;
+    border-radius: 15px;
+    border-bottom: 1px solid var(--main-color);
+    border-top: 1px solid transparent;
+}
+
+.custom-button:hover {
+    border-top: 1px solid var(--main-color);
+}
+
+form input[type='submit'] {
+    width: fit-content;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+form input[type='submit']:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+form input::placeholder {
+    color: #ccc;
+    font-size: 14px;
+}
+
+form select {
+    padding: 10px;
+    border-top: 1px solid transparent;
+}
+
+form select:focus,
+form select:hover {
+    border-top: 1px solid var(--main-color);
+}
+
+/* End Form Style */
+
+/* Start Our-recipes */
+
+.our-recipes {
+    /* border: black solid 1px; */
+    margin-bottom: 1000px;
+}
+
+.our-recipes h2 {
+    width: fit-content;
+    margin: 10px auto;
+    position: relative;
+    padding: 10px;
+}
+
+.our-recipes h2::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background-color: var(--main-color);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.our-recipes h2::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--main-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+
+.our-recipes .recipes {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px 20px;
+}
+
+.our-recipes .card {
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    border-right: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: 10px;
+}
+
+.our-recipes .card:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.our-recipes .card .content {
+    cursor: pointer;
+}
+
+.our-recipes .card h3:hover {
+    color: var(--main-color);
+}
+
+.our-recipes .container .recipes .card .image img {
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+
+/* End Our-recipes */
+
+
+/* Delete Recipe Form */
+
+.actions {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.delete-recipe {
+    margin: 0;
+    width: fit-content;
+}
+
+.delete-recipe input {
+    background-color: var(--main-color) !important;
+    color: white;
+}
+
+.delete-recipe input:hover {
+    background-color: rgb(204 204 204 / 0.1) !important;
+    color: black !important;
+    border-top: 1px solid var(--main-color);
+}
+
+/* End Delete Recipe Form */
+
+
+/* Start Show Recipe */
+
+.show {
+    margin-bottom: 100px;
+}
+
+.show .image {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.show .image img {
+    width: 50%;
+    margin: auto;
+}
+
+.show .content .body {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .show .content .body {
+        flex-direction: column;
+    }
+
+    .show .content .body .ingredient {
+        order: -1;
+    }
+}
+
+.show .content .body .text {
+    flex: 5;
+    text-align: justify;
+    line-height: 2;
+    font-size: 20px;
+}
+
+.show .content .body .ingredient {
+    flex: 2;
+}
+
+.show .content .body .ingredient ul {
+    margin-left: 20px;
+}
+
+.show .content .body .ingredient h4 {
+    padding: 0px 20px;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+
+.show .content .body .ingredient li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* End Show Recipe */
+
+/* Start Search  */
+
+.search {
+    margin-top: 40px;
+}
+
+.search input {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: var(--main-color) 1px solid;
+    border-top: var(--main-color) 1px solid !important;
+    border-radius: 20px;
+}
+
+.search input[type="submit"] {
+    width: fit-content;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.search input[type="submit"]:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* End Search */
+
+
+/* Start Profile Style */
+
+.profile {
+    margin-top: 50px;
+}
+
+.profile h1 {
+    text-align: center;
+}
+
+.profile form {
+    margin-top: 50px;
+}
+
+.profile form .image {
+    width: 15%;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+}
+
+.profile form .image img {
+    display: block;
+    border-radius: 50%;
+}
+
+.profile form .image .camera {
+    margin: 0;
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(0 0 0 / 0.2);
+    display: none;
+    transition: 0.5s;
+}
+
+.profile form .image:hover {
+    background-color: rgb(0 0 0 / 0.2);
+}
+
+.profile form .image:hover .camera {
+    display: flex;
+    justify-content: center;
+}
+
+.profile form input {
+    border-top: transparent 1px solid;
+}
+
+.profile form input:focus {
+    border-top: var(--main-color) 1px solid;
+}
+
+/* End Profile Style */
+
+/* Start ingredient */
+
+.ingredient-button {
+    display: none;
+}
+
+/* End ingredient */
+
+/* Start Comments */
+
+.comments {
+    /* border: 1px solid black; */
+}
+
+.comments .comment-content .card {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+
+}
+
+.comment-content .card .user-image {
+    width: 80px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-content .card .user-image img {
+    display: block;
+    width: 100%;
+
+    border-radius: 50%;
+}
+
+
+/* End Comments */
